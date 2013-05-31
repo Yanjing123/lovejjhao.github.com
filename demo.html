@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style>
+		.content{position:relative; width: 1064px; height: 100%; margin:0 auto; }
+		
+		#works{position:relative;padding-bottom:57px;width:100%;height:auto;}
+		#works > .content > .work_container{float:left;width:25%;height:327px;margin:0;padding:0;position:relative;cursor:pointer;overflow:hidden;}
+		#works > .content > .work_container > .front{width: 100%; height: 100%;
+		background-color: #69cc8e; 
+		background-size: 30px 30px;
+		background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+		-webkit-animation: loading 0.5s linear infinite;
+		}
+		#works > .content > .work_container > .back > a{position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline-block;z-index:2;}
+		.content_description_work{width:80%;height:20px;margin:0 auto;margin-top:30%;position:relative;z-index:2;display:none;}
+		.content_description_work_background{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box; border:none;width:100%;height:100%;position:absolute;top:0px;-webkit-transition-duration:.25s;-moz-transition-duration:.25s;-o-transition-duration:.25s;-ms-transition-duration:.25s;transition-duration:.25s;}
+
+	</style>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+</head>
+<body>
+	<div id="works">
+		<div class="content">
+			<div class="work_container">
+				<div class="front">
+					<img src="http://tequilla.me/assets/image/project/thumbs/masserati.jpg"></div>
+				<div class="back">
+					<a class="noref" href="#">
+						<div class="content_description_work" style="display: none;">
+							这里随意写字吧
+						</div>
+						<div class="content_description_work_background" style="border: 0px double rgb(105, 204, 142);"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".work_container").hover(function(){
+				var current = $(this);
+
+				current.find('.content_description_work').show();
+				current.find('.content_description_work_background').css('border', "140px solid rgb(105, 204, 142)");
+			}, function(){
+				var current = $(this);
+
+				current.find('.content_description_work').hide();
+				current.find('.content_description_work_background').css('border', "0px double rgb(105, 204, 142)");
+			});
+		});
+	</script>
+</body>
+</html>
