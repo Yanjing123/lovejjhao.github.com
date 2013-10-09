@@ -1,0 +1,14 @@
+
+/*============================================ css reset =================================================================*/
+
+body,h1,h2,h3,h4,p,ul,ol,dl,input,label{margin:0;}
+ul,ol,dl,li,dt,dd{padding-left:0;list-style-type:none;margin-left:0px;}
+a {text-decoration:none;
+}
+/*image with no-border*/
+a img,img{border:none;}
+
+.Left{float:left;display:inline;}.Right{float:right;display:inline;}
+.Relative{position:relative;}.Absolute{position:absolute;}
+
+.Zoom {overflow:hidden;zoom:1;}/*clear the bug of double margin in IE with style of float and recover height of 'father'*/
